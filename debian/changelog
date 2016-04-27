@@ -1,0 +1,65 @@
+l7-filter-userspace (0.12-beta1-1) unstable; urgency=low
+
+  * QA upload.
+  * Remove myself from uploaders.
+  * Set maintainer do Debian QA Group.
+  * Bump standards version to 3.9.2 (no changes needed).
+  * Add build-arch and build-indep targets.
+
+ -- Jakub Wilk <jwilk@debian.org>  Thu, 25 Aug 2011 15:51:00 +0200
+
+l7-filter-userspace (0.12-beta1-0.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+
+  [ Jakub Wilk ]
+  * Update my e-mail address.
+  * Update Maintainer and Source fields in debian/copyright and Homepage field
+    in debian/control to reflect the new upstream.
+
+  [ Jorge Salamero Sanz ]
+  * New upstream version (Closes: #611111).
+  * Bump standards version to 3.9.1 (no changes needed).
+  * Update watch file.
+  * Refresh netfilter-conntrack-0.100.diff and hyphen-used-as-minus-sign.diff.
+
+ -- Jorge Salamero Sanz <bencer@debian.org>  Sun, 13 Feb 2011 16:51:20 +0100
+
+l7-filter-userspace (0.11-4) unstable; urgency=low
+
+  [ Jakub Wilk ]
+  * Upload to unstable.
+    + Fixes (alleged) linking issues (closes: #557332).
+  * Update debian/copyright in accordance to the latest DEP-5 version.
+
+  [ Piotr Lewandowski ]
+  * New maintainer.
+  * Move Jakub Wilk to uploaders.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Mon, 04 Jan 2010 13:42:17 +0100
+
+l7-filter-userspace (0.11-3) experimental; urgency=low
+
+  * Fix make_key() function to produce the same results both for
+    NFCT_T_NEW and NFCT_T_DESTROY events. Thanks to Guillaume Castagnino for
+    reporting the bug.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Fri, 27 Nov 2009 12:31:19 +0100
+
+l7-filter-userspace (0.11-2) experimental; urgency=low
+
+  * Switch to source format 3.0 (quilt).
+  * Add Vcs-* fields.
+  * Bump standards version to 3.8.3 (no changes needed).
+  * Follow API changes in libnetfilter-conntrack (closes: #547351).
+  * Convert debian/copyright to the DEP-5 format. Relicense Debian packaging
+    to the Expat license.
+  * Fix hyphen/minus confusion in the manual page.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Wed, 11 Nov 2009 18:54:40 +0100
+
+l7-filter-userspace (0.11-1) unstable; urgency=low
+
+  * Initial release (Closes: #503104).
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Wed, 15 Apr 2009 19:35:13 +0200

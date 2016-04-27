@@ -1,0 +1,13 @@
+diff --git a/l7-queue.cpp b/l7-queue.cpp
+index 1e7c2ce..986deed 100644
+--- a/l7-queue.cpp
++++ b/l7-queue.cpp
+@@ -196,7 +196,7 @@ u_int32_t l7_queue::handle_packet(nfq_data * tb, struct nfq_q_handle *qh)
+   ifi = nfq_get_outdev(tb);
+   if(ifi) l7printf(4, "outdev = %d ", ifi);
+ 
+-  ret = nfq_get_payload(tb, &data);
++  ret = nfq_get_payload(tb, reinterpret_cast<unsigned char **>(&data));
+   if(ret >= 0) l7printf(4, "payload_len = %d\n", ret);
+   
+   char ip_protocol = data[9];

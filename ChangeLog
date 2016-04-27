@@ -1,0 +1,106 @@
+v0.12 - 30 Aug 2010
+
+Added l7_connections map access locking patch from James King.
+
+Applied getopt patch from Gavin Pryke.
+
+Applied memory leak during pattern loading by Florian Westphal.
+
+v0.11 - 26 Feb 2009
+
+Fixed compilation problem by moving include of <linux/netfilter.h> after 
+<linux/types.h> and <netinet/in.h> as suggested by Norbert Harrer.
+
+v0.10 - 27 Sept 2008
+
+Added some #includes that aledr says makes it compile for him.  (It 
+already compiled for me.)
+
+Made a few common error messages more verbose.
+
+v0.9 - 18 Sept 2008
+
+Added -z switch for daemonizing.
+
+v0.8 - 1 Sept 2008
+
+Implemented nfq_unbind_pf workaround so l7-filter works again with newer 
+kernels.  Added warning if {nf,ip}_conntrack_ipv4 is not loaded.
+
+Fixed version number and document install.  Fixed documentation.
+
+Reduced compiler warnings with newer gcc.
+
+v0.7 - 29 June 2008
+
+Made compatible with gcc 4.3, courtesy of Peter Alfredsen, loki_val at 
+gentoo dot org.
+
+v0.6 - 27 May 2008
+
+Added check for nf_conntrack_netlink.  Fixed silly crash when run by 
+non-root.
+
+0.5 tarball was made with "make gz", didn't include a bunch of necessary 
+files, and was thus totally useless.  Oops.  I'll tar it manually until 
+that's fixed.
+
+v0.5 - 7 May 2008
+
+Interface/documentation tweaks.  Fixed compilation warnings.  Fixed i486 
+sleep bug (and general kludge).  Started using autoconf.  Fixed compilation
+error with gcc 4.3.
+
+v0.4 - 7 March 2007
+
+Implemented the -m and -c options.  Changed the values of NO_MATCH and 
+NO_MATCH_YET to 1 and 2, respectively.
+
+Made install location configurable.
+
+Changed around the way that ./configure looks for libraries, since the old
+way wasn't working for some people.
+
+v0.3 - 25 Jan 2007
+
+Added man page.
+
+Added ./configure to check for libraries.
+
+Made patterns directory user selectable.
+
+Counts all packets now, not just those with application layer data.  I 
+think this is better because it avoids holding connections forever if 
+they keep sending empty packets.  On the other hand, now connections can 
+evade l7-filter by sending a bunch of empty packets at the beginning. 
+Perhaps a more complex approach may be necessary at some point.
+
+Made number of packets user selectable.  Defaults to 10 (not 8).
+
+Organized pattern file parsing code better.
+
+Made buffer length user selectable.  Made buffer dynamically allocated.  
+It is now only kept when needed instead of for the whole life of the 
+connection.  Buffer is dumped to the screen (if in verbose mode) when 
+(1) too many packets have passed without a match or (2) connection is 
+closed without a match.
+
+Now checks for ip_conntrack_netlink module.
+
+Various tweaks.
+
+v0.2 - 9 Jan 2007
+
+Makefile now has dependencies and stuff.
+
+Removed forced case insensitivity.  Implemented extended pattern files.  
+Case sensitivity is now the default, but can be overridden with the 
+"userspace flags" line in pattern files.
+
+Can now select the queue number.  Configuration file is now specified 
+after "-f" instead of being bare.
+
+v0.1 - 7 Dec 2006
+
+Initial release.  TCP and UDP mostly work. Initial UDP packets are 
+missed. Not a lot of features yet.

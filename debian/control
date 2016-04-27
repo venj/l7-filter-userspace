@@ -1,0 +1,20 @@
+Source: l7-filter-userspace
+Section: net
+Priority: extra
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper (>= 7), autotools-dev, libnetfilter-conntrack-dev, libnetfilter-queue-dev
+Standards-Version: 3.9.2
+Homepage: http://l7-filter.clearfoundation.com/
+Vcs-Hg: http://hg.debian.org/hg/collab-maint/l7-filter-userspace/
+Vcs-Browser: http://hg.debian.org/hg/collab-maint/l7-filter-userspace/
+
+Package: l7-filter-userspace
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: l7-protocols
+Description: Userspace layer 7 packet classifier
+ This is a version of l7-filter, an application layer packet classifier,
+ that works in userspace instead of the kernel.  It is eventually intended to
+ replace the kernel version since running in userspace is much safer and more
+ flexible. However, it is in the early stages of development and NOT yet ready
+ for prime time.

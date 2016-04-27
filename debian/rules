@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+build build-arch build-indep: build-stamp
+
+build-stamp:
+	dh build
+	touch $(@)
+
+clean:
+	dh clean
+
+install: build
+	dh install
+
+binary-indep: install
+	dh binary-indep
+
+binary-arch: install
+	dh binary-arch
+
+binary: binary-indep binary-arch
+
+.PHONY: build build-arch build-indep clean binary-indep binary-arch binary install
+
+# vim:ts=4 sw=4 noet

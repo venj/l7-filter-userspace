@@ -1,0 +1,39 @@
+This is a version of l7-filter that works in userspace instead of the 
+kernel.  It is eventually intended to replace the kernel version since 
+running in userspace is much safer and more flexible.  However, it is in 
+the early stages of development and NOT yet ready for prime time.
+
+Full documentation is at http://l7-filter.sf.net/HOWTO-userspace 
+The rest of this file is an extremely abbreviated version of the HOWTO. 
+Please refer to the web version for a better guide.  Also see "man 
+l7-filter" after installing.
+
+*** Installation ***
+
+- Run "./configure" to check for dependencies.
+    You will likely need to install libnetfilter_conntrack and 
+    libnetfilter_queue from ftp.netfilter.org
+- Run "make".
+- Run "sudo make install" or similar.
+
+To choose a different install location use the options on configure.
+For instance:
+
+./configure --prefix=/usr
+
+This will install the l7-filter executable in /usr/bin/ rather than
+/usr/local/bin
+
+*** Running ***
+
+Make sure you have the ip_conntrack_netlink module loaded or compiled 
+into your kernel.  Run l7-filter:
+
+l7-filter -f configfile
+
+See sample-l7-filter.conf for the format of the config file. Send 
+traffic to it:
+
+iptables -A FORWARD -j NFQUEUE --queue-num 0
+
+or similar.
