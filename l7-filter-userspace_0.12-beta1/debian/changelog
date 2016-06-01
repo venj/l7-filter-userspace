@@ -1,3 +1,9 @@
+l7-filter-userspace (0.12-beta1-2) unstable; urgency=low
+
+  * Fixed build issue on ubuntu 14.04
+
+ -- Venj Chu <ersaclarke@gmail.com>  Thu, 1 Jun 2016 16:00:00 +0800
+
 l7-filter-userspace (0.12-beta1-1) unstable; urgency=low
 
   * QA upload.
