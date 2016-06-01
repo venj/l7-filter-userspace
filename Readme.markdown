@@ -5,10 +5,16 @@
 This source code is basically the original l7-filter-userspace src package with a teeny-tiny patch made the original source code build on ubuntu 14.04.
 
 ## How-to
+1. Install build tools
+    
+    ```
+    apt-get install -y vim build-essential fakeroot devscripts debhelper quilt dh-make
+    apt-get install -y autotools-dev libnetfilter-conntrack-dev libnetfilter-queue-dev
+    ```
 
-1. Clone the project
-2. debbuild
-3. Fix any missing package with apt-get, and redo step 2.
+2. Clone the project
+3. cd l7-filter-userspace_0.12-beta1
+4. debbuild -us -uc
 
 That it. 
 
